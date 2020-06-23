@@ -1,0 +1,34 @@
+import marcas.*
+import personas.*
+
+test "testX" {
+	const h1 = new Hofbrau()
+	const j1= new Jarra()
+	j1.marca(h1)
+	h1.lupulo(80)
+	h1.pais("argentina")
+	h1.graduacion(8)
+	j1.litros(0.5)
+	j1.marca(h1)
+	h1.calcularGraduacion()
+	assert.equals(0.04,j1.contenidoDeAlcohol())
+	
+	const pers1= new Personas()
+	pers1.peso(75)
+	pers1.compro(j1)
+	pers1.escuchaMusica(true)
+	pers1.nivelDeAguante(10)
+	pers1.pais("belgica")
+	
+	assert.notThat(pers1.estaEbria())
+	assert.equals(0.04,pers1.totalAlcohol())
+	assert.that(pers1.leGusta(h1))
+	
+	
+	
+	
+	
+	
+	
+
+}
